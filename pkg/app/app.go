@@ -181,8 +181,6 @@ func NewApp() *App {
 		sitedata.AddRoutes(router, prefix+"/built")
 		sitedata.AddRoutes(router, prefix+"/static")
 
-		router.Handler("GET", prefix+"/fs/*filepath", http.StripPrefix(prefix+"/fs", http.FileServer(http.Dir("/"))))
-
 		k.m.AddRoutes(router, prefix+"/mem")
 		k.live.AddRoutes(router, prefix+"/healthy")
 		k.ready.AddRoutes(router, prefix+"/ready")
