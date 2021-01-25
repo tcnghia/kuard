@@ -46,10 +46,6 @@ export default class App extends React.Component {
     return (
       <div className="top">
         <div className="title">
-          <div className="alert alert-danger" role="alert">
-            <svg className="icon icon-notification"><use xlinkHref="#icon-notification"></use></svg> { " " }
-            <b>WARNING:</b> This server may expose sensitive and secret information. Be careful.
-          </div>
           <Disconnected ref={el => this.disconnected = el}/>
           <h2><samp>{this.props.page.hostname}</samp></h2>
           <div>Demo application version <i>{this.props.page.version}</i></div>
@@ -66,7 +62,6 @@ export default class App extends React.Component {
             <HighlightLink href={base+"/-/dns"} className="nav-item">DNS Query</HighlightLink>
             <HighlightLink href={base+"/-/keygen"} className="nav-item">KeyGen Workload</HighlightLink>
             <HighlightLink href={base+"/-/memq"} className="nav-item">MemQ Server</HighlightLink>
-            <a className="nav-item" href={base+"/fs/"}>File system browser</a>
           </div>
           <div className="content">
             <Locations onNavigation={this.handleNavigation.bind(this)}>
